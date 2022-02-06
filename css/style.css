@@ -185,8 +185,8 @@ body {
 }
 
 .slider {
-  -ms-touch-action: none;
-      touch-action: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
 }
 
 .slide {
