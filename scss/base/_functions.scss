@@ -1,0 +1,39 @@
+//ЭТОТ МОДУЛЬ СОДЕРЖИТ ФУНКЦИИ 
+
+//Функции для относительных единиц измерения =================================================================================================================================
+//REM
+@function rem($px){
+	$result: $px/16 + rem;
+	@return $result;
+}
+//EM
+@function em($px){
+	$result: $px/16 + em;
+	@return $result;
+}
+//ПРОЦЕНТЫ
+@function prc($pxOne, $pxTwo){
+	$result: $pxOne/$pxTwo * 100%;
+	@return $result;
+}
+
+//Адаптивное свойство ========================================================================================================================================================
+@mixin adaptive-value($property, $startSize, $minSize, $type){
+	$addSize: $startSize - $minSize;
+	@if $type==1 {		
+		//Изменения происходят, когда контейнер меньше
+		#{$property}: $startSize + px;
+		@media(max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+		}
+	} @else if $type==2 {
+		//Изменения происходят, когда контейнер больше
+		#{$property}: $startSize + px;
+		@media(min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	} @else {
+		//Изменения происходят всегда
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+}

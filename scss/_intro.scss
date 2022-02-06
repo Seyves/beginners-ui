@@ -1,0 +1,257 @@
+.intro {
+	color: $mainColor;
+	overflow: hidden;	
+
+	&__container{
+		max-width: 1445px;	
+	}
+
+	&__body{
+		min-height: 650px;
+		max-height: 730px;		
+		height: 70vh;
+		margin-top: 106px;
+	}
+
+	&__slider-intro {		
+		overflow: hidden;
+		height: 100%;
+	}
+}
+
+.slider-intro {
+	position: relative;	
+
+	&__arrows{
+		position: absolute;
+		@include adaptive-value('bottom', 46, 30, 1);
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+		width: 60%;
+		max-width: 660px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__arrow-left, &__arrow-right{
+		
+		font-size: 24px;	
+	}
+
+	&__arrow-left {
+		bottom: 6%;
+		left: 25%;
+
+	}
+
+	&__arrow-right {		
+		bottom: 6%;
+		right: 25%;
+
+	}
+
+	&__band {		
+		gap: 1000px;		
+		display: flex;		
+		width: 100000px;
+		height: 100%;
+	}
+
+	&__elem {	
+		width: calc(100vw - 30px);
+		max-width: 1445px;
+		min-width: 290px;
+		height: 100%;
+		position: relative;
+	}
+}
+
+.slider-intro-elem{
+
+	&__circle{
+		background-color: $brightColor;
+		position: absolute;
+		border-radius: 50%;
+
+		width: calc(15.7em + 10vw);		
+		max-width: 375px;		
+		min-width: 220px;
+
+		aspect-ratio: 1/1;
+		left: 49%;		
+		top: 31%;
+		transform:translateX(-50%);
+	}
+
+	&__person{		
+		position: absolute;
+		left: 47.5%;		
+
+		width: calc(180px + 10vw);
+		max-width: 300px;
+		min-width: 200px;
+
+		bottom: -80px;
+		transform:translateX(-50%);
+		img{			
+			width: 100%;
+		}
+	}
+
+	&__person, &__circle{
+		@media (max-width: $tablet) {			
+			left: calc(30vw/2 + 10vw);
+		}
+	}
+	&__person, &__circle{
+		@media (max-width: 560px) {
+			left: 50%;
+			transform:translateX(-50%);
+		}
+	}
+
+	&__start {		
+		position: absolute;
+		@include adaptive-value('right', 156, 0, 1);
+		top: 39.5%;
+
+		width: 20vw;
+		max-width: 285px;
+		min-width: 200px;
+		
+		text-align: justify;
+	}
+	
+	&__edition{
+		position: absolute;
+		right: 0;
+		top: 16%;
+		display: flex;
+		align-items: center;
+		
+		width: 180px;
+		height: 90px;
+		border: 2px solid $mainColor;
+		padding: 0 35px;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+
+	}
+
+	&__edition-text{
+		line-height: 30px;
+		font-size: rem(17);
+		font-weight: bold;
+		letter-spacing: 3.06px;		
+		span{font-size: rem(29);letter-spacing: 5.8px;}
+	}
+
+	&__beginners{
+		font-size: rem(43);
+		@media (max-width: $tablet) {
+			font-size: rem(35);
+		}
+		letter-spacing: 4.5px;
+		position: absolute;
+		font-weight: 300;
+		transform: rotate(270deg);
+		left: -65px;
+		bottom: 37%;
+		span{font-weight: 700;}
+		@media (max-width: $tablet){
+			transform: rotate(0deg);
+			bottom: auto;
+			top: 60px;
+			left: 2%;
+		}
+	}
+
+	&__ui{		
+		position: absolute;
+		top: 17%;
+		left: 3%;
+		font-size: rem(130);
+		letter-spacing: 5px;
+		font-weight: bold;
+		@media (max-width: $tablet) {
+			top: 20px;
+			left: rem(270);			
+			font-size: rem(110);
+		}
+		@media (max-width: 560px) {
+			left: auto;
+			right: 0;
+			top: 100px;
+		}
+	}
+
+	&__become-a-pro{
+		position: absolute;
+		left:	16%;
+		bottom: 32%;
+		font-size: em(14);
+		letter-spacing: 0.5px;
+		font-weight: bold;
+		line-height: 1.82;
+		display: flex;
+		gap: 12px;
+		
+		@media (max-width: $tablet){
+			display: none;
+		}
+	}
+
+}
+
+.start{
+	@media (max-width: $tablet) {
+		width: 32vw;
+		min-width: auto;
+		max-width: none;
+	}
+	@media (max-width: 560px){
+		width: 50%;
+		min-width: 180px;
+		top: auto;
+		bottom: 90px;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	&__title {
+		font-size: rem(20);
+		font-weight: 600;
+		text-transform: uppercase;
+		line-height: 1.43;
+		letter-spacing: 0.5px;
+		@media (max-width: 560px){
+			display: none;
+		}
+	}
+
+	&__subtitle {
+		margin: 15px 0 35px;
+		font-size: rem(14);
+		font-weight: 600;
+		line-height: 1.93;
+		letter-spacing: 0.21px;
+		@media (max-width: 560px){
+			display: none;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__button-letsgo{
+		background-color: $brightColor;
+		letter-spacing: 1.5px;
+	}
+	&__button-readmore{
+		background-color: $backgroundColor;		
+		letter-spacing: 1.5px;
+	}
+}

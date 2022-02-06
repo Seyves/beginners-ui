@@ -1,0 +1,114 @@
+.subscribe {
+
+	@include adaptive-value('height', 1128, 890, 1);
+	position: relative;
+	overflow: hidden;
+
+	&__bg{
+	}
+
+	&__container {		
+		@include adaptive-value('padding-top', 128, 50, 1);
+		max-width: 1157px;
+	}
+
+	&__body {
+	}
+
+	&__content {
+		@include adaptive-value('padding-top', 90, 60, 1);
+		float: right;
+		max-width: 511px;
+	}
+
+	&__title {
+		@include adaptive-value('font-size', 47, 35, 1);
+		font-weight: bold;
+		color: $mainColor;
+		text-align: center;
+		letter-spacing: 4.7px;
+		line-height: 1.3em;
+	}
+
+	&__subtitle {
+		@include adaptive-value('font-size', 15.5, 14, 1);
+		font-weight: 600;
+		line-height: 1.94em;
+		letter-spacing: 0.23px;
+		color: $mainColor;
+		text-align: center;
+		
+		margin-top: 10px;
+		line-height: 1.8;
+	}
+
+	&__form {
+	}
+}
+
+.bg{
+	&__person{
+		position: relative; 
+		left: 50px;
+	}
+}
+
+.form {
+	
+	@include adaptive-value('margin-top', 90, 50, 1);	
+
+	&__name {
+	}
+
+	&__mail {
+	}
+
+	&__message {
+	}
+
+	&__button {
+		width: 170px;
+		height: 64px;
+		margin: 0 auto;
+		letter-spacing: 0.73px;
+		@include adaptive-value('margin-top', 84, 40, 1);			
+		@include adaptive-value('margin-bottom', 72, 35, 1);	
+	}
+}
+
+.input {
+	width: 100%;
+	border: solid 3px $brightColor;
+	background-color: $backgroundColor;
+	color: $mainColor;
+
+	&:not(:nth-child(3)){
+		@include adaptive-value('margin-bottom', 50, 30, 1);	
+	}	
+
+	&::placeholder{
+		font-size: rem(17);
+		letter-spacing: 3.06px;
+		font-weight: bold;
+		color: #6a6a6a;
+	}
+
+	transition: all 0.2s ease 0s;
+	&:focus{
+		transform: scale(1.02);
+	}
+
+	font-size: rem(15.5);
+
+	@include adaptive-value('padding-left', 40, 20, 1);	
+	@include adaptive-value('padding-right', 40, 20, 1);	
+	@include adaptive-value('padding-top', 28, 15, 1);	
+	@include adaptive-value('padding-bottom', 28, 15, 1);
+
+	height: 69px;	
+}
+
+.textarea{
+	height: 179px;
+	resize: none;
+}

@@ -1,0 +1,147 @@
+.courses {
+
+	&__container {		
+		@include adaptive-value('padding-top', 196, 150, 1);
+	}
+
+	&__body {
+		position: relative;
+	}
+
+	&__title {		
+		color: $mainColor;
+		font-size: rem(38);
+		@include adaptive-value('font-size', 38, 30, 1);
+ 		letter-spacing: 3.8px;
+		@include adaptive-value('margin-bottom', 110, 70, 1);
+
+		span{
+			@include adaptive-value('font-size', 115, 80, 1);
+			font-weight: bold;
+		}
+	}
+
+	&__edition {
+		position: absolute;
+		right: 0;
+		top: 50px;
+
+		font-size: rem(17);
+		span{font-size:rem(29)}
+		font-weight: bold;
+		letter-spacing: 5.8px;
+		color: $mainColor;
+		display: flex;
+		gap: 24px;
+
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__variants, &__group{
+		display: flex;
+		flex-wrap: wrap;
+		
+		row-gap: 40px;
+		column-gap: 57px;
+		
+		justify-content: center;
+	}
+
+	&__group{
+		justify-content: space-around;			
+	}	
+
+	&__variant{
+		position: relative;
+		min-width: 291px;
+		border: solid 3px $mainColor;
+		
+		display: flex;
+		flex-direction: column;
+		align-items: center;			
+	}
+
+
+	&__more {
+		font-size: rem(16);
+		font-weight: bold;
+		color: $mainColor;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: auto;
+		@include adaptive-value('margin-top', 70, 40, 1);
+
+		max-width: 260px;
+		width: 20%;
+		min-width: 220px;
+		transform: translate(-9%);
+
+		transition: all 0.2s ease 0s;
+		
+		@media (hover:hover) {
+			&:hover{
+				color: $mutedColor;
+				transform: translate(-9%) scale(1.05);
+			}
+		}
+	}
+
+	&__arrow {
+		font-size: 25px;
+	}
+}
+
+.variant {	
+
+	&__order{	
+		width: 46px;
+		height: 46px;
+		background-color: $mainColor;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: rem(20.5);
+		font-weight: 600;
+		color: #181818;	
+		display: flex;
+		align-items: center;
+		padding-left: 5px;
+	}
+
+	&__title {
+		font-size: rem(33.5);
+		font-weight: 600;
+		line-height: 1.48;
+		letter-spacing: 0.84px;
+		color: $mainColor;
+
+		margin: 70px 0 16px;
+
+		:after{
+			content: '';
+			display: block;
+			height: 2px;
+			width: 55px;
+			background-color: $brightColor;
+			margin: 16px auto 0;
+
+		}
+	}
+
+	&__text {
+		font-size: em(14);
+		font-weight: 600;
+		line-height: 1.93;
+		letter-spacing: 0.21px;
+		text-align: justify;
+		color: $mainColor;
+		max-width: 208px;
+	}
+
+	&__button {
+		margin: 30px 0;
+	}
+}

@@ -1,0 +1,41 @@
+.benefits {
+
+	&__container{
+		max-width: 1442px;
+	}
+
+	&__body {		
+		min-height: 19vh;
+		box-shadow: 0 0 38.4px 1.6px rgba(0, 0, 0, 0.3);
+		background-color: $backgroundColor;
+		
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 70px;
+		padding: 50px;
+	}
+
+	&__benefit {
+	}
+}
+.benefit {
+
+	display: flex;
+	gap: em(20);	
+	color: $mainColor;	
+
+	&__number {
+		font-family: Oswald;
+		font-size: rem(51);
+ 	 	font-weight: 500;
+	}
+
+	&__title {
+		line-height: 1.2;
+		letter-spacing: 2.2px;
+		font-size: em(22);
+  		font-weight: bold;
+	}
+}

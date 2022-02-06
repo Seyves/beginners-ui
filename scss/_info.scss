@@ -1,0 +1,259 @@
+.info {
+	.dot-before, .dot-after{
+		&:before, &:after{
+			background-color: $mutedColor;;
+		}
+	}	
+	position: relative;	
+
+	&__bg{
+	}
+}
+
+.bg{
+	&__oval-first{		
+		div{
+			width: 100%;
+			height: 100%;
+
+			img{
+				max-width: 725px;
+			}
+	
+			&:before{
+				left: 32px;
+				top: -5px;
+			}
+			
+			transform: scaleX(-1);
+		}
+
+		position: absolute;
+		top: 115px;
+		left: 0;
+	}
+
+	&__oval-second{		
+		div{
+			width: 100%;
+			height: 100%;
+
+			img{
+				max-width: 725px;
+			}
+	
+			&:before{
+				left: 32px;
+				top: -5px;
+			}
+			
+			transform: scaleY(1) rotate(10deg);
+		}	
+
+		position: absolute;
+		top: 850px;
+		right: 0;
+	}
+
+	&__explore{
+		position: absolute;
+		top: 1355px;
+		right: 305px;
+		transform: rotate(-90deg);
+		color: rgba($mainColor , 0.1);
+		font-size: rem(100);
+		font-weight: bold;
+		letter-spacing: 5px;
+	}
+}
+
+.about-us {
+	position: relative;
+
+	&__container{
+		
+		@include adaptive-value('padding-top', 60, 35, 1);
+		&:after{
+			bottom: 0;
+			right: 650px;
+		}
+	}
+
+	&__body {
+	}
+
+	&__content{
+		box-sizing: content-box;
+		max-width: 431px;
+		@include adaptive-value('padding-top', 230, 70, 1);
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+
+	&__points {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;		
+		gap: 57px;
+		margin: 70px 0;
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&__point {
+		display: flex;
+		gap: 9px;
+		font-size: rem(12);
+		font-weight: bold;
+		color: $mainColor;
+
+		&:before{
+			width: 8px;
+			height: 8px;
+			background-color: $mutedColor;
+		}
+	}
+
+	&__button {
+	}
+
+	&__person {
+		
+		@include adaptive-value('top', 145, 385, 1);
+		right: 0;
+
+		&:before{
+			right: 50px;
+			top: 0;
+		}		
+
+		&:after{			
+			top: 140px;
+			left: 40px;
+		}
+		
+		img{
+			@include adaptive-value('width', 483, 320, 1);
+		}
+	}
+}
+
+.about-us, .why-us{		
+
+	height: 800px;
+
+	&__container {
+		max-width: 1080px;
+	}
+}
+
+.why-us {
+
+	@include adaptive-value('height', 800, 1000, 1);
+	@include adaptive-value('margin-top', 220, 20, 1);
+
+	&__container {
+		&:after{
+			bottom: 40px;
+			left: 90%;
+		}	
+	}
+
+	&__body {
+	}
+
+	&__content {
+		float: right;
+		
+		box-sizing: content-box;
+		@include adaptive-value('padding-top', 230, 50, 1);
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+
+	&__button {
+	}
+
+	&__person{
+		z-index: -1;
+		@include adaptive-value('top', 115, 480, 1);
+		left: 52px;
+		&:after{			
+			top: 70px;
+			left: -35px;
+		}
+		img{			
+			@include adaptive-value('width', 407, 300, 1);
+		}
+	}
+	&__oval{
+		div{
+			width: 100%;
+			height: 100%;
+			&:before{
+				top: -10px;
+				left: 55px;	  
+			}
+			&:after{
+				bottom: -10px;
+				right: 65px;	  
+			}
+			img{					
+				width: 720px;	
+			}			
+			
+			transform: scaleX(-1) rotate(10deg);
+
+			@media (max-width: $tablet) {			
+				transform: scaleX(-1) rotate(120deg);
+			}
+		}
+		position: absolute;
+		z-index: -2;
+		top: 90px;
+		left: -195px;  
+	}
+}
+
+.title-info{
+	@include adaptive-value('font-size', 58, 50, 1);
+	font-weight: 700;
+	color: $mainColor;
+	margin-bottom: 35px;
+	letter-spacing: 4px;
+}
+.text-info{
+	font-size: rem(14);
+	font-weight: 700;
+	line-height: 1.8;
+	letter-spacing: 0.2px;
+	color: $mainColor;
+	text-align: justify;
+	max-width: 377px;
+}
+.button-info{	
+	margin-top: 30px;
+}
+.person-info{
+	position: absolute;
+	&:after{
+		content: '';
+		display: block;
+		@include adaptive-value('width', 396, 300, 1);
+		aspect-ratio: 1/1;
+		background-color: $mutedColor;
+		border-radius: 50%;
+
+		position: absolute;
+		z-index: -1;
+	}
+}

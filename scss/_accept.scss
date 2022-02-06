@@ -1,0 +1,117 @@
+.accept {	
+
+	&__container {
+		@include adaptive-value('padding-top', 133, 50, 1);
+	}
+
+	&__body{
+		@include adaptive-value('height', 565, 500, 1);
+		position: relative;
+	}
+
+	&__title {
+		@include adaptive-value('font-size', 84, 40, 1);
+		@include adaptive-value('padding-top', 115, 150, 1);
+
+		color: $mainColor;
+		text-align: center;
+		font-size: rem(84);
+		font-weight: bold;
+		line-height: 1.18;
+		letter-spacing: 4.2px;
+	}
+
+	&__oval {
+		div{
+			width: 100%;
+			height: 100%;			
+			transform: translate(-50%);
+
+			&:before{
+				left: 2.4%;
+				top: 90px;
+			}	
+			&:after{
+				right: 2.4%;
+				bottom: 90px;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		max-width: 832px;
+		min-width: 300px;
+		width: 70%;
+		height: 381px;
+
+		position: absolute;
+		top: 54px;
+		left: 50%;
+	}
+
+	&__discover-your-skills {
+		display: flex;
+		gap: 24px;
+		position: absolute;
+		font-weight: bold;
+		color: $mainColor;
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&__discover-your-skills:first-child{
+		transform: rotate(270deg);
+		top: 105px;
+		left: -100px;
+	}
+
+	&__discover-your-skills:not(:first-child){
+		transform: rotate(90deg);
+		top: 105px;
+		right: -100px;
+	}
+
+	&__explore, &__about{
+		@include adaptive-value('font-size', 49, 25, 1);
+		position: absolute;
+		font-weight: bold;
+		letter-spacing: 2.45px;		
+		color: rgba($mainColor , 0.1);
+		bottom: 0;
+	}
+	&__explore{
+		text-align: center;
+		left: 0;
+		.wrap{
+			display: none;
+			@media (max-width: $mobileSmall) { display: inline;}
+		}
+		@media (max-width: $mobileSmall){bottom: -15px;}
+	}
+	&__about {
+		right: 0;
+	}
+
+	&__arrow {
+		z-index: 2;
+		color: $mainColor;
+		font-size: 70px;
+		transform: translate(-50%);
+		position: absolute;
+		bottom: -40px;
+		left: 50%;		
+
+		transition: all 0.2s ease 0s;
+
+		@media(hover: hover){
+			&:hover{
+				color: $mutedColor;
+				transform: translate(-50%) scale(1.1);
+			}
+		}
+	}
+}

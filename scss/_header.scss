@@ -1,0 +1,168 @@
+@import "base/base";
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+	font-family: Oswald;
+	font-weight: 600;
+	font-size: rem(17);
+	color: $mainColor;
+	background: linear-gradient(0deg, rgba($backgroundColor, 0.7) 0%, rgba($backgroundColor, 1) 100%);
+
+	&__container {				
+	}
+
+	&__nav {				
+		padding:  rem(46) 0 rem(24);
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		justify-content: space-between;
+		min-height: em(34);
+		box-sizing: content-box;
+	}
+}
+
+.nav{
+	&__logo img{
+		height: rem(18);
+	}
+	&__menu{			
+		gap: rem(30) rem(25);
+		position: relative;
+		flex: 0 0 prc(562, 1337);
+		max-width: 562px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}	
+
+	&__sign-in{		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: em(32);
+		width: em(100);
+		background-color: $mainColor;
+		color: $backgroundColor;
+		
+		transition: all 0.2s ease;
+
+		&:hover{
+			background-color: $mutedColor;
+		}
+		&:active{
+			background-color: $brightColor;
+		}
+	}
+}
+
+.menu{
+	&__element{
+		
+		transition: all 0.2s ease;
+
+		@media(hover: hover){
+			&:hover{color: $mutedColor;}
+		}
+
+		justify-self: center;
+	}
+
+	&__element:first-child, {justify-self: start;}
+	&__element:last-child{justify-self: end;}
+
+	&__marker{
+		transition: background 0.2s, top 0.3s, left 0.3s;
+		position: absolute;
+		background-color: $mainColor; 
+		height: 2px;
+		width: 37px;
+		top: 20px;				
+		left: 0px;
+	}
+}
+
+.burger-menu {
+	
+	display: none;
+	@media (max-width: $mobile){			
+		display: block;	
+	}
+
+	&__body {
+		z-index: 2;
+		width: em(300);
+		position: absolute;
+		right: em(-300);
+		top: em(32);
+		background: rgba(31, 31, 31, 0.95);
+		border-radius: 3px;
+		padding: 15px 10px;
+
+		transition: all 0.2s ease;
+	}
+
+	&__body.active{
+		right: 0;
+	}	
+
+	.menu{
+		
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		height: 50vh;
+		max-height: em(240);
+		
+		margin: 10vh 0 em(30);
+		@media (min-height: 500px) {
+			margin-top: em(50);
+		}
+	}	
+
+	.sign-in{
+		margin: 0 auto 0;
+		background-color: #000;
+		color:#fff;
+	}
+}
+
+.burger{	
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	gap: em(7);	
+
+	&::before, &::after, & span{
+		content: '';
+		display: block;
+		width: em(50);
+		height: em(3);
+		background-color: #fff;	
+		position: relative;
+		transition: all 0.1s ease;
+	}
+
+	&.active{
+		padding: 5px 0;
+		transform: scale(0.8);
+		&::before{			
+			top: em(10);			
+			transform: rotate(45deg);
+		}
+		&::after{	
+			bottom: em(10);					
+			transform: rotate(-45deg);
+		}
+		span{
+			transform: scale(0);
+		}
+	}
+}
+.exited{
+	background-color: $mutedColor;
+}
