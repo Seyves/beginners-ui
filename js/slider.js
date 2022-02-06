@@ -96,6 +96,7 @@ class Slider{
 			if(event.target.closest('.slider-band') != this.band){
 				return;
 			}
+			event.preventDefault();
 
 			this.initialCursonPosition = event.pageX - this.slider.getBoundingClientRect().x;
 			this.band.style.transition = '0s';
