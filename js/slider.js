@@ -99,7 +99,6 @@ class Slider{
 
 			this.initialCursonPosition = event.pageX - this.slider.getBoundingClientRect().x;
 			this.band.style.transition = '0s';
-			event.preventDefault();
 			
 			document.addEventListener('pointermove', this.swipeMoveListener);
 			document.addEventListener('pointerup', this.swipeUpListener);
@@ -184,8 +183,7 @@ class Slider{
 	}
 
 	//этот метод вызывается при каждом движении указателем по слайдеру. Считает, достаточное ли расстояние было проведено для свайпа и немного смещает слады
-	swipeMoveListener = (event) => {		
-		event.preventDefault();
+	swipeMoveListener = (event) => {	
 		this.currentCursonPosition = event.pageX - this.slider.getBoundingClientRect().x;
 		this.cursorDelta = this.initialCursonPosition - this.currentCursonPosition;		
 
@@ -197,7 +195,7 @@ class Slider{
 	swipeUpListener = (event) => {	
 		this.band.style.transition = this.time + 's';
 
-		if(Math.abs(this.cursorDelta) > 150){
+		if(Math.abs(this.cursorDelta) > 50){
 			if(this.cursorDelta>0){
 				this.sliderPosition += 1;
 			}
